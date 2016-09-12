@@ -54,17 +54,17 @@ public class SeckillServiceIml  implements SeckillService{
 	public Exposer exprotSeckillUrl(long seckillId) {
 		
 		//ª∫¥Ê”≈ªØ;
-		Seckill seckill =redisDao.getSeckill(seckillId);
-		if(seckill == null){
-			seckill = seckillDao.queryById(seckillId);
+		/*Seckill seckill =redisDao.getSeckill(seckillId);
+		if(seckill == null){*/
+		Seckill 	seckill = seckillDao.queryById(seckillId);
 			if(seckill == null){
 				return new Exposer(false, seckillId);
 			}else{
 				redisDao.putSeckill(seckill);
 			}
 			
-		}
-		 
+		/*}
+		 */
 		
 		/*if(seckill == null ){
 			return new Exposer(false, seckillId);
